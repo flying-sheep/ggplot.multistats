@@ -1,0 +1,15 @@
+Package: ggplot.multistats
+Title: Multiple Summary Statistics for Binned Stats/Geometries
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Philipp",
+           family = "Angerer",
+           role = c("aut", "cre"),
+           email = "phil.angerer@gmail.com",
+           comment = c(ORCID = "0000-0002-0369-2888"))
+Description: What the package does (one paragraph).
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: methods, rlang, scales, hexbin, ggplot2
+RoxygenNote: 6.1.1
