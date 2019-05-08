@@ -37,3 +37,5 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
     bins = 5
   )
 ```
+
+![](example.png)
