@@ -1,3 +1,4 @@
 ^ggplot\.multistats\.Rproj$
 ^\.Rproj\.user$
+^\.github/
 ^example\.png$

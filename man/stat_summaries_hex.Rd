@@ -76,7 +76,7 @@ The default is \code{\link{draw_key_hexagon}}.}
 }
 \description{
 Very similar to \code{\link[ggplot2]{stat_summary_hex}}, but allows
-for multiple stats to be captured using the \code{\link{funs}} parameter.
+for multiple stats to be captured using the \code{funs} parameter.
 }
 \examples{
 library(ggplot2)

@@ -1,7 +1,7 @@
 #' Multi-Stat Binning Layer
 #'
 #' Very similar to \code{\link[ggplot2]{stat_summary_hex}}, but allows
-#' for multiple stats to be captured using the \code{\link{funs}} parameter.
+#' for multiple stats to be captured using the \code{funs} parameter.
 #'
 #' @inheritParams ggplot2::stat_summary_2d
 #' @param funs       A list or vector of functions and function names.
