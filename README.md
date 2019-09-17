@@ -1,5 +1,7 @@
-ggplot.multistats
+ggplot.multistats [![Workflow badge][]](https://github.com/flying-sheep/ggplot.multistats/actions)
 =================
+
+[Workflow badge]: https://github.com/flying-sheep/ggplot.multistats/workflows/Build%20R%20package/badge.svg
 
 <!-- badges: start -->
 <!-- badges: end -->
