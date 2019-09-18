@@ -7,7 +7,13 @@ Authors@R:
            role = c("aut", "cre"),
            email = "phil.angerer@gmail.com",
            comment = c(ORCID = "0000-0002-0369-2888"))
-Description: What the package does (one paragraph).
+Description:
+	Provides the ggplot binning layer 'stat_summaries_hex',
+	which functions similar to its singular form,
+	but allows the use of multiple statistics per bin.
+	Those statistics can be mapped to multiple bin aesthetics.
+URL: https://github.com/flying-sheep/ggplot.multistats
+BugReports: https://github.com/flying-sheep/ggplot.multistats/issues
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
