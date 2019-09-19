@@ -1,4 +1,4 @@
-ggplot.multistats [![Workflow badge][]](https://github.com/flying-sheep/ggplot.multistats/actions)
+ggplot.multistats [![Workflow badge][]](https://github.com/flying-sheep/ggplot.multistats/commits/master)
 =================
 
 [Workflow badge]: https://github.com/flying-sheep/ggplot.multistats/workflows/Build%20R%20package/badge.svg
