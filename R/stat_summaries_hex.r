@@ -58,6 +58,7 @@ stat_summaries_hex <- function(
 
 #' @importFrom ggplot2 ggproto Stat
 #' @name stat_summaries_hex
+#' @docType NULL
 #' @export
 StatSummariesHex <- ggproto(
 	'StatSummariesHex',
