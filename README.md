@@ -1,10 +1,10 @@
-ggplot.multistats [![Workflow badge][]](https://github.com/flying-sheep/ggplot.multistats/commits/master)
-=================
+[![CRAN badge][]](https://cran.r-project.org/package=ggplot.multistats) [![Workflow badge][]](https://github.com/flying-sheep/ggplot.multistats/commits/master)
 
+[CRAN badge]: https://www.r-pkg.org/badges/version/ggplot.multistats
 [Workflow badge]: https://github.com/flying-sheep/ggplot.multistats/workflows/Build%20R%20package/badge.svg
 
-<!-- badges: start -->
-<!-- badges: end -->
+ggplot.multistats
+=================
 
 `ggplot.multistats` currently provides `stat_summaries_hex` and some helpers.
 
