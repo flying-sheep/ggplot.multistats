@@ -6,10 +6,21 @@
 \title{Multi-Stat Binning Layer}
 \format{An object of class \code{StatSummariesHex} (inherits from \code{Stat}, \code{ggproto}, \code{gg}) of length 3.}
 \usage{
-stat_summaries_hex(mapping = NULL, data = NULL, geom = "hex",
-  position = "identity", ..., bins = 30, binwidth = NULL,
-  drop = TRUE, funs = c(value = "mean"), na.rm = FALSE,
-  show.legend = NA, inherit.aes = TRUE, key_glyph = NULL)
+stat_summaries_hex(
+  mapping = NULL,
+  data = NULL,
+  geom = "hex",
+  position = "identity",
+  ...,
+  bins = 30,
+  binwidth = NULL,
+  drop = TRUE,
+  funs = c(value = "mean"),
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE,
+  key_glyph = NULL
+)
 
 StatSummariesHex
 }
