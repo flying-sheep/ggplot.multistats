@@ -18,11 +18,11 @@
 #' library(ggplot2)
 #' # Define the variable used for the stats using z
 #' ggplot_base <- ggplot(iris, aes(Sepal.Width, Sepal.Length, z = Petal.Width))
-#' # The default is creating `stat(value)` containing the mean
-#' ggplot_base + stat_summaries_hex(aes(fill = stat(value)), bins = 5)
+#' # The default is creating `after_stat(value)` containing the mean
+#' ggplot_base + stat_summaries_hex(aes(fill = after_stat(value)), bins = 5)
 #' # but you can specify your own stats
 #' ggplot_base + stat_summaries_hex(
-#'   aes(fill = stat(median), alpha = stat(n)),
+#'   aes(fill = after_stat(median), alpha = after_stat(n)),
 #'   funs = c('median', n = 'length'),
 #'   bins = 5)
 #'
@@ -63,8 +63,9 @@ stat_summaries_hex <- function(
 StatSummariesHex <- ggproto(
 	'StatSummariesHex',
 	Stat,
-	#default_aes = aes(fill = stat(value)),
+	#default_aes = aes(fill = after_stat(value)),
 	required_aes = c('x', 'y', 'z'),
+	dropped_aes = c('z'),
 	compute_group = function(
 		data, scales,
 		binwidth = NULL, bins = 30,
@@ -77,7 +78,7 @@ StatSummariesHex <- ggproto(
 		funs <- as.list(normalize_function_list(funs))  # if it was no list before, adding a function makes it one
 		funs$`_dummy` <- function(x) 1  # hexBinSummarise ruins our day if we have less than two items in the list
 		idx_dummy <- names(funs) %in% '_dummy'
-		if (sum(idx_dummy) > 1L) stop('You cannot name a function `_dummy_, sorry.')
+		if (sum(idx_dummy) > 1L) stop('You cannot name a function `_dummy`, sorry.')
 
 		fun <- function(x) sapply(funs, exec, x, simplify = FALSE)
 

@@ -26,7 +26,7 @@ devtools::install_github('flying-sheep/ggplot.multistats')
 Example
 -------
 Specify a summary variable using the `z` aesthetic
-and specify a list of `funs` to provide `stat`s for you:
+and specify a list of `funs` to provide `after_stat`s for you:
 
 ```r
 library(ggplot2)
@@ -34,7 +34,7 @@ library(ggplot.multistats)
 
 ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
   stat_summaries_hex(
-    aes(z = Petal.Width, fill = stat(median), alpha = stat(n)),
+    aes(z = Petal.Width, fill = after_stat(median), alpha = after_stat(n)),
     funs = c('median', n = 'length'),
     bins = 5
   )

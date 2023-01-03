@@ -4,7 +4,9 @@
 \alias{stat_summaries_hex}
 \alias{StatSummariesHex}
 \title{Multi-Stat Binning Layer}
-\format{An object of class \code{StatSummariesHex} (inherits from \code{Stat}, \code{ggproto}, \code{gg}) of length 3.}
+\format{
+An object of class \code{StatSummariesHex} (inherits from \code{Stat}, \code{ggproto}, \code{gg}) of length 4.
+}
 \usage{
 stat_summaries_hex(
   mapping = NULL,
@@ -25,32 +27,36 @@ stat_summaries_hex(
 StatSummariesHex
 }
 \arguments{
-\item{mapping}{Set of aesthetic mappings created by \code{\link[=aes]{aes()}} or
-\code{\link[=aes_]{aes_()}}. If specified and \code{inherit.aes = TRUE} (the
-default), it is combined with the default mapping at the top level of the
-plot. You must supply \code{mapping} if there is no plot mapping.}
+\item{mapping}{Set of aesthetic mappings created by \code{\link[ggplot2:aes]{aes()}}. If specified and
+\code{inherit.aes = TRUE} (the default), it is combined with the default mapping
+at the top level of the plot. You must supply \code{mapping} if there is no plot
+mapping.}
 
 \item{data}{The data to be displayed in this layer. There are three
 options:
 
 If \code{NULL}, the default, the data is inherited from the plot
-data as specified in the call to \code{\link[=ggplot]{ggplot()}}.
+data as specified in the call to \code{\link[ggplot2:ggplot]{ggplot()}}.
 
 A \code{data.frame}, or other object, will override the plot
 data. All objects will be fortified to produce a data frame. See
-\code{\link[=fortify]{fortify()}} for which variables will be created.
+\code{\link[ggplot2:fortify]{fortify()}} for which variables will be created.
 
 A \code{function} will be called with a single argument,
 the plot data. The return value must be a \code{data.frame}, and
 will be used as the layer data. A \code{function} can be created
 from a \code{formula} (e.g. \code{~ head(.x, 10)}).}
 
-\item{geom}{The geometric object to use display the data}
+\item{geom}{The geometric object to use to display the data, either as a
+\code{ggproto} \code{Geom} subclass or as a string naming the geom stripped of the
+\code{geom_} prefix (e.g. \code{"point"} rather than \code{"geom_point"})}
 
-\item{position}{Position adjustment, either as a string, or the result of
-a call to a position adjustment function.}
+\item{position}{Position adjustment, either as a string naming the adjustment
+(e.g. \code{"jitter"} to use \code{position_jitter}), or the result of a call to a
+position adjustment function. Use the latter if you need to change the
+settings of the adjustment.}
 
-\item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
+\item{...}{Other arguments passed on to \code{\link[ggplot2:layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 \code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
@@ -78,7 +84,7 @@ display.}
 \item{inherit.aes}{If \code{FALSE}, overrides the default aesthetics,
 rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
-the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
+the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 
 \item{key_glyph}{A legend key drawing function or a string providing
 the function name minus the \code{draw_key_} prefix.
@@ -92,11 +98,11 @@ for multiple stats to be captured using the \code{funs} parameter.
 library(ggplot2)
 # Define the variable used for the stats using z
 ggplot_base <- ggplot(iris, aes(Sepal.Width, Sepal.Length, z = Petal.Width))
-# The default is creating `stat(value)` containing the mean
-ggplot_base + stat_summaries_hex(aes(fill = stat(value)), bins = 5)
+# The default is creating `after_stat(value)` containing the mean
+ggplot_base + stat_summaries_hex(aes(fill = after_stat(value)), bins = 5)
 # but you can specify your own stats
 ggplot_base + stat_summaries_hex(
-  aes(fill = stat(median), alpha = stat(n)),
+  aes(fill = after_stat(median), alpha = after_stat(n)),
   funs = c('median', n = 'length'),
   bins = 5)
 
