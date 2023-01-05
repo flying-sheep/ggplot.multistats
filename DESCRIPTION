@@ -1,7 +1,7 @@
 Package: ggplot.multistats
 Title: Multiple Summary Statistics for Binned Stats/Geometries
 Version: 1.0.0
-Authors@R: 
+Authors@R:
     person(given = "Philipp",
            family = "Angerer",
            role = c("aut", "cre"),
@@ -17,5 +17,5 @@ BugReports: https://github.com/flying-sheep/ggplot.multistats/issues
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: methods, rlang, scales, hexbin, ggplot2
-RoxygenNote: 7.0.0
+Imports: methods, rlang, scales, hexbin, ggplot2 (>= 3.3.0)
+RoxygenNote: 7.2.3
