@@ -1,6 +1,6 @@
 Package: ggplot.multistats
 Title: Multiple Summary Statistics for Binned Stats/Geometries
-Version: 1.0.0
+Version: 1.0.1
 Authors@R:
     person(given = "Philipp",
            family = "Angerer",
