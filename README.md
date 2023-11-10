@@ -15,8 +15,13 @@ but allows specifying multiple stats using the `funs` parameter (see [Example](#
 
 Installation
 ------------
-`ggplot.multistats` is not yet on [CRAN](https://CRAN.R-project.org).
-Install it using the `devtools` package from GitHub:
+`ggplot.multistats` is on [CRAN](https://CRAN.R-project.org).
+
+```r
+install.packages('ggplot.multistats')
+```
+
+You can also install the development version from GitHub:
 
 ```r
 # install.packages('devtools')
