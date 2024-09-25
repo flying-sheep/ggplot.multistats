@@ -1,5 +1,6 @@
 ^ggplot\.multistats\.Rproj$
 ^\.Rproj\.user$
 ^\.github/
+^\.pre-commit-config\.yaml$
 ^example\.png$
 ^LICENSE\.md$
